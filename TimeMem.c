@@ -53,10 +53,10 @@ static int info(HANDLE hProcess)
 	_tprintf(_T("User time      : %.2lf (%.1lf%%)\n"), tUser, 100.0*tUser/tElapsed);
 
 	_tprintf(_T("page fault #   : %u\n"), pmc.PageFaultCount);
-	_tprintf(_T("Working set    : %u KB\n"), pmc.PeakWorkingSetSize/1024);
-	_tprintf(_T("Paged pool     : %u KB\n"), pmc.QuotaPeakPagedPoolUsage/1024);
-	_tprintf(_T("Non-paged pool : %u KB\n"), pmc.QuotaPeakNonPagedPoolUsage/1024);
-	_tprintf(_T("Page file size : %u KB\n"), pmc.PeakPagefileUsage/1024);
+	_tprintf(_T("Working set    : %zd KB\n"), pmc.PeakWorkingSetSize/1024);
+	_tprintf(_T("Paged pool     : %zd KB\n"), pmc.QuotaPeakPagedPoolUsage/1024);
+	_tprintf(_T("Non-paged pool : %zd KB\n"), pmc.QuotaPeakNonPagedPoolUsage/1024);
+	_tprintf(_T("Page file size : %zd KB\n"), pmc.PeakPagefileUsage/1024);
 
 	return 0;
 }
